@@ -20,6 +20,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.loading {
+  font-size:5rem;
+  display: flex;
+  margin:0 auto;
+  justify-content: center;
+  align-items: center;
+  margin-top:20%;
+  
+
+}
+
 header {
   max-width: auto;
   display: flex;
@@ -141,6 +152,8 @@ header {
   font-size: 1rem;
   font-weight: 300;
   color: var(--primary-color);
+  padding-top: 40px;
+  display:block;
 }
 
 .movie-info h3 {
