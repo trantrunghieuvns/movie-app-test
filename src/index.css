@@ -1,5 +1,18 @@
+:root {
+  --primary-color: rgb(241, 217, 0);
+  --bg-color: #3d3d3d;
+};
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
+  padding:1rem;
+
+  color: aliceblue;
+  background-color: var(--bg-color);
+  font-size:16px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,7 +20,216 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header {
+  max-width: auto;
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom:2rem;
+  background-color:rgba(75, 75, 75, 0.75);
+}
+    .logo {
+    display: flex; 
+    
+    height: 1.5rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding:10px;
+    }
+  
+  .logo img {
+      height:100%;
+  }
+
+    .search {
+      background-color: #464d55;
+      border-width: 0;
+      width: 100%;
+      color: azure;
+      padding:0.5rem;
+      border-style: none;
+    }
+
+    .search:focus, input:focus {
+      outline: none;
+    }
+
+    .search-tool{
+      display: flex;
+      padding:5px;
+    }
+
+      .search-tool .searchButton {
+          align-items: center;
+          background-color: initial;
+          background-image: linear-gradient(#464d55, #25292e);
+          border-width: 0;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, .1),0 3px 6px rgba(0, 0, 0, .05);
+          box-sizing: border-box;
+          color: #fff;
+          cursor: pointer;
+          display: inline-flex;
+          flex-direction: column;
+          font-size: 16px;
+          justify-content: center;
+          line-height: 1;
+          margin: 0;
+          outline: none;
+          overflow: hidden;
+          padding: 0 32px;
+          text-align: center;
+          text-decoration: none;
+          transform: translate3d(0, 0, 0);
+          transition: all 150ms;
+          vertical-align: baseline;
+          white-space: nowrap;
+          margin-left:5px;
+        }
+
+        .search-tool .searchButton:hover {
+          box-shadow: rgba(0, 1, 0, .2) 0 2px 8px;
+          opacity: .85;
+        }
+
+        .search-tool .searchButton:active, .search-tool .searchButton:focus {
+          outline: 0;
+        }
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+ 
+}
+
+.movie { 
+  margin: 1rem;
+  width: 15rem; 
+  background-color: #131313;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px 0px rgba(36, 36, 36, 0.75);
+}
+
+.movie img {
+  max-width: 100%; 
+}
+
+.movie:hover .opa {
+
+  background-color: #131313;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.opa {
+  transition: all 0.5s ease-in-out;
+}
+
+.movie-info {
+  margin: 0;
+  max-height: 10rem;
+  padding: 1rem ;
+  overflow: hidden;
+}
+
+.movie-info span {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--primary-color);
+}
+
+.movie-info h3 {
+  margin-top: -0.5px;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  width:auto;
+  height: 3rem;
+}
+
+.watchNow {
+        align-items: center;
+        background-color: initial;
+        background-image: linear-gradient(#464d55, #25292e);
+        border-width: 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .1),0 3px 6px rgba(0, 0, 0, .05);
+        box-sizing: border-box;
+        color: #fff;
+        height:2rem;
+        cursor: pointer;
+        display: inline-flex;
+        flex-direction: column;
+        font-size: 16px;
+        justify-content: center;
+        line-height: 1;
+        margin: 0;
+        outline: none;
+        overflow: hidden;
+        padding: 0 32px;
+        text-align: center;
+        text-decoration: none;
+        transform: translate3d(0, 0, 0);
+        transition: all 150ms;
+        vertical-align: baseline;
+        white-space: nowrap;
+      }
+      
+      .watchNow:hover {
+        box-shadow: rgba(0, 1, 0, .2) 0 2px 8px;
+        opacity: .85;
+      }
+      
+      .watchNow:active {
+        outline: 0;
+      }
+      
+      .watchNow:focus {
+        outline: 0;
+      }
+      
+.movie-overview {
+  background-color: var(--primary-color);
+  bottom: 0;
+  left: 0; 
+  right: 0;
+  padding: 1rem;
+  position: absolute;
+  color: black;
+  transform: translateY(100%);
+  transition: all 0.2s ease-in-out;
+  overflow: auto;
+  max-height: 100%;
+}
+.movie:hover .movie-overview {
+  transform: translateY(0%);
+}
+
+
+/*responsive */
+
+@media all and (max-width: 501px) {
+  .search {
+    width: 6rem;
+  }
+
+  .search-tool .searchButton {
+    padding: 0 15px;
+  }
+
+  .watchNow .button {
+    height: 48px;
+  }
+
+  .logo{
+    padding:10px;
+  }
+  .logo img{
+    width: 4rem;
+    height: auto;
+  }
 }
